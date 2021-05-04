@@ -26,7 +26,6 @@ abstract class DialogRender implements Render {}
 
 ///Base class of factory.
 class Dialog implements DialogRender {
-
   ///Factory method. Should be override in concrete class of Dialog.
   @protected
   Button createButton() {
@@ -42,16 +41,12 @@ class Dialog implements DialogRender {
 
 class WindowsDialog extends Dialog {
   @override
-  Button createButton() {
-    return WindowsButton();
-  }
+  Button createButton() => WindowsButton();
 }
 
 class MacOsDialog extends Dialog {
   @override
-  Button createButton() {
-    return MacOsButton();
-  }
+  Button createButton() => MacOsButton();
 }
 
 void main() {
