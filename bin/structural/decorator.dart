@@ -105,7 +105,7 @@ Future<void> main() async {
   print('----------------------------------------');
 
   ///Example with two wrapper of decorators.
-  final appEncrCompr = Application(EncryptionCompressionDecorator(simpleDataSource));
-  await appEncrCompr.writeReadTest(DATA);
+  final appSecure = Application(EncryptionCompressionDecorator(simpleDataSource));
+  await appSecure.writeReadTest(DATA);
 
 }
