@@ -35,7 +35,10 @@ class Application {
 ///New AVI decoder with support multi core decoding.
 abstract class AviMultiCoreDecoder {
   Future<void> decode(
-      String filePathSource, String filePathOut, bool maxPriority);
+    String filePathSource,
+    String filePathOut,
+    bool maxPriority,
+  );
 }
 
 class AviMultiCoreDecoderImpl implements AviMultiCoreDecoder {
