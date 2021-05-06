@@ -92,20 +92,20 @@ class Application {
   }
 }
 
-const DATA_FILE = 'data.txt';
-const DATA = 'afalsnfkoNAJBSJKBFNJKANSFHhawsfjkasfklasf';
+const dataFile = 'data.txt';
+const data = 'afalsnfkoNAJBSJKBFNJKANSFHhawsfjkasfklasf';
 
 Future<void> main() async {
   ///Simple example without decorators
-  final simpleDataSource = FileDataSource(DATA_FILE);
+  final simpleDataSource = FileDataSource(dataFile);
 
   final appSimple = Application(simpleDataSource);
-  await appSimple.writeReadTest(DATA);
+  await appSimple.writeReadTest(data);
 
   print('----------------------------------------');
 
   ///Example with two wrapper of decorators.
   final appSecure = Application(EncryptionCompressionDecorator(simpleDataSource));
-  await appSecure.writeReadTest(DATA);
+  await appSecure.writeReadTest(data);
 
 }

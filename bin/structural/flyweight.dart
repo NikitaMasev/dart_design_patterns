@@ -106,19 +106,19 @@ static Tree getTree(
   }
 }
 
-const COUNT_TREE = 10000;
-const ANALYTICS_VALUE_COUNT_REPEATED_TEXTURES = 5000;
-const RANDOM_VALUE = 50000;
+const countTree = 10000;
+const analyticsValueCountRepeatedTextures = 5000;
+const randomLimit = 50000;
 
-int getTextureValue() => Random().nextInt(RANDOM_VALUE);
+int getTextureValue() => Random().nextInt(randomLimit);
 
-String getTextureCode() => '${Random().nextInt(RANDOM_VALUE)}'
-    '${Random().nextInt(RANDOM_VALUE)}${Random().nextInt(RANDOM_VALUE)}';
+String getTextureCode() => '${Random().nextInt(randomLimit)}'
+    '${Random().nextInt(randomLimit)}${Random().nextInt(randomLimit)}';
 
 String getTextureCodeValue() =>
-    '${Random().nextInt(RANDOM_VALUE)}${Random().nextInt(RANDOM_VALUE)}'
-    '${Random().nextInt(RANDOM_VALUE)}${Random().nextInt(RANDOM_VALUE)}'
-    '${Random().nextInt(RANDOM_VALUE)}${Random().nextInt(RANDOM_VALUE)}';
+    '${Random().nextInt(randomLimit)}${Random().nextInt(randomLimit)}'
+    '${Random().nextInt(randomLimit)}${Random().nextInt(randomLimit)}'
+    '${Random().nextInt(randomLimit)}${Random().nextInt(randomLimit)}';
 
 ///NOTE: With this simple repeated [Bitmap] we aren't see any benefits.
 ///Because cached collection also consume memory and contain [Bitmap]'s,
@@ -161,18 +161,18 @@ Future<void> main() async {
 
   final treesOptimized = <Tree>[];
 
-  for (var i = 0; i < COUNT_TREE; i++) {
+  for (var i = 0; i < countTree; i++) {
     treesOptimized.add(
       TreeFactory.getTree(
         Random().nextDouble(),
         Random().nextDouble(),
-        i <= ANALYTICS_VALUE_COUNT_REPEATED_TEXTURES
+        i <= analyticsValueCountRepeatedTextures
             ? repeatedTextureValue
             : getTextureValue(),
-        i <= ANALYTICS_VALUE_COUNT_REPEATED_TEXTURES
+        i <= analyticsValueCountRepeatedTextures
             ? repeatedTextureCode
             : getTextureCode(),
-        i <= ANALYTICS_VALUE_COUNT_REPEATED_TEXTURES
+        i <= analyticsValueCountRepeatedTextures
             ? repeatedTextureCodeValue
             : getTextureCodeValue(),
       ),

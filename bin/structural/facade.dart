@@ -114,10 +114,10 @@ class Application {
   }
 }
 
-const FILE_SRC = 'D:/video/summer.avi';
-const FILE_DEST = 'D:/video/summer.mpeg4';
+const fileSrc = 'D:/video/summer.avi';
+const fileDest = 'D:/video/summer.mpeg4';
 
 Future<void> main() async {
   final app = Application(VideoConverterImpl());
-  await app.convertFile(FILE_SRC, FILE_DEST);
+  await app.convertFile(fileSrc, fileDest);
 }

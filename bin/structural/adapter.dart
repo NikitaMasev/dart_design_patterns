@@ -72,13 +72,13 @@ class AviMultiCoreAdapter implements AviDecoder {
   }
 }
 
-const PATH_SRC = 'D:/src.avi';
-const PATH_OUT = 'D:/out.avi';
+const pathSrc = 'D:/src.avi';
+const pathOut = 'D:/out.avi';
 
 void main() {
   ///it was like that before
   final appLegacy = Application(AviDecoderImpl());
-  appLegacy.decodeFileAndGet(PATH_SRC, PATH_OUT);
+  appLegacy.decodeFileAndGet(pathSrc, pathOut);
 
   print('------------------------------------');
 
@@ -89,5 +89,5 @@ void main() {
   );
 
   final appMultiCore = Application(adapterAviDecoder);
-  appMultiCore.decodeFileAndGet(PATH_SRC, PATH_OUT);
+  appMultiCore.decodeFileAndGet(pathSrc, pathOut);
 }
